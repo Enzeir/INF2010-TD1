@@ -61,6 +61,8 @@ public class LinkedListQueue<AnyType> implements Queue<AnyType>
 	{
 		//A completer
 		
+
+		
 	}
 	
 	//Ajoute un element a la fin de la file
@@ -68,6 +70,10 @@ public class LinkedListQueue<AnyType> implements Queue<AnyType>
 	public void push(AnyType item)
 	{		
 		//A completer
+		Node<AnyType> newNode = new Node<AnyType>(item, null);
+		last.setNext(newNode);
+		last = newNode;
+		size++;
 		
 	}  
 }

@@ -31,6 +31,10 @@ public class ArrayQueue<AnyType> implements Queue<AnyType>
 	public AnyType peek()
 	{
 		//A completer
+		if(!empty())
+		{
+			return table[startindex];
+		}
 		return null;
 		
 	}
@@ -40,6 +44,11 @@ public class ArrayQueue<AnyType> implements Queue<AnyType>
 	public void pop() throws EmptyQueueException
 	{
 		//A completer
+		if(table[startindex] == null)
+		{
+		throw new EmptyQueueException();
+		}
+		table[startindex] = null;
 		
 	}
 	
@@ -49,6 +58,12 @@ public class ArrayQueue<AnyType> implements Queue<AnyType>
 	public void push(AnyType item)
 	{
 		//A completer
+		if(size == table.length)
+		{
+			resize(2);
+		}
+		table[size] = item;
+		size++;
 		
 	}
    
